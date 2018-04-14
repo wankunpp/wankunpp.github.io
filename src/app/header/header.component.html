@@ -1,0 +1,51 @@
+<div class="header">
+    <div class="bg-color">
+        <header id="main-header">
+            <nav class="navbar navbar-expand-sm  navbar-light  fixed-top" [ngStyle]="{backgroundColor:checkScroll()}">
+                <a class="navbar-brand" routerLink="">Lareina Studio </a>
+                <ul class="navbar-nav mx-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="about" routerActive="active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="portfolio" routerActive="active">Portfolio</a>
+                    </li>
+                    <li class="nav-item dropdown" dropdown>
+                        <a class="nav-link" dropdownToggle (click)="false" style="cursor:pointer;">Services</a>
+                        <ul *dropdownMenu class="dropdown-menu">
+                            <li>
+                                <a class="nav-link dropdown-item" routerLink="/rates">Makeup</a>
+                                <a class="nav-link dropdown-item" routerLink="/cosmetics">Cosmetics</a>
+                                <a class="nav-link dropdown-item" href="#">Cakes</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="contact" routerActive="active">Contact</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"  *ngIf="!isLoggin">
+                                <a class="nav-link" routerLink="register" routerActive="active">Signup</a>
+                            </li>
+                    <li class="nav-item"  *ngIf="!isLoggin">
+                        <a class="nav-link" routerLink="login" routerActive="active">login</a>
+                    </li>
+                    <li class="nav-item dropdown" dropdown *ngIf="isLoggin">
+                        <button class="btn btn-secondary btn-sm" dropdownToggle (click)="false" style="cursor:pointer;">Manage</button>
+                        <ul *dropdownMenu class="dropdown-menu">
+                            <li>
+                                <a class="nav-link dropdown-item" routerLink="/shopping-cart">My Shopping cart</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="nav-link dropdown-item" (click)="logout()">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+</div>
