@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/about/about.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".bg-overlay{\n    background: url('port03.3c00d9b82be4f801c7c6.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.bg-overlay-2{\n    background: url('port02.b60a75e512c4f3c7223d.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.overlay{\n    background-color: rgba(0,0,0,0.67);\n    min-height:500px;\n}\n\n.wrapper-message{\n    color: white;\n    position: absolute;\n    left: 0;\n    top: 40%;\n    width: 100%;\n    text-align: center;\n    font-size: 50px;\n}\n\nsection {\n\tposition: relative;\n}\n\nhr{\n    margin-top:50px;\n    margin-bottom: 50px;\n}"
+module.exports = ".bg-overlay{\n    background: url('port03.3c00d9b82be4f801c7c6.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n\n\n.overlay{\n    background-color: rgba(0,0,0,0.67);\n    min-height:500px;\n}\n\n\n\n.wrapper-message{\n    color: white;\n    position: absolute;\n    left: 0;\n    top: 40%;\n    width: 100%;\n    text-align: center;\n    font-size: 50px;\n}\n\n\n\nsection {\n\tposition: relative;\n}\n\n\n\nhr{\n    margin-top:50px;\n    margin-bottom: 50px;\n}"
 
 /***/ }),
 
@@ -85,6 +85,7 @@ var AboutComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_register_register_component__ = __webpack_require__("./src/app/auth/register/register.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_service_component__ = __webpack_require__("./src/app/services/service.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -104,11 +105,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_1__homepage_homepage_component__["a" /* HomepageComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_2__about_about_component__["a" /* AboutComponent */] },
     { path: 'portfolio', component: __WEBPACK_IMPORTED_MODULE_3__portfolio_portfolio_component__["a" /* PortfolioComponent */] },
     { path: 'rates', component: __WEBPACK_IMPORTED_MODULE_4__rates_rates_component__["a" /* RatesComponent */] },
+    { path: 'services', component: __WEBPACK_IMPORTED_MODULE_13__services_service_component__["a" /* ServicesComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_5__auth_login_login_component__["a" /* LoginComponent */], },
     { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_6__contact_contact_component__["a" /* ContactComponent */] },
     { path: 'cosmetics', component: __WEBPACK_IMPORTED_MODULE_8__services_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */] },
@@ -122,8 +125,8 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_7__angular_core__["I" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["d" /* RouterModule */].forRoot(appRoutes),],
-            exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["d" /* RouterModule */]]
+            imports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["e" /* RouterModule */].forRoot(appRoutes),],
+            exports: [__WEBPACK_IMPORTED_MODULE_0__angular_router__["e" /* RouterModule */]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -153,22 +156,34 @@ module.exports = "<!-- navbar -->\n<app-header></app-header>\n\n<app-alert></app
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(router) {
+        this.router = router;
+        router.events
+            .filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]; })
+            .subscribe(function (event) {
+            window.scroll(0, 0);
+        });
     }
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -196,27 +211,29 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_cosmetics_cosmetics_component__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_cosmetics_cosme_detail_cosme_detail_component__ = __webpack_require__("./src/app/services/cosmetics/cosme-detail/cosme-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__auth_register_register_component__ = __webpack_require__("./src/app/auth/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__auth_alert_alert_component__ = __webpack_require__("./src/app/auth/alert/alert.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ngx_bootstrap_modal__ = __webpack_require__("./node_modules/ngx-bootstrap/modal/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ngx_bootstrap_carousel__ = __webpack_require__("./node_modules/ngx-bootstrap/carousel/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ngx_bootstrap_dropdown__ = __webpack_require__("./node_modules/ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_cosmetics_cosmetics_services__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__auth_user_user_service__ = __webpack_require__("./src/app/auth/user/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__auth_alert_alert_service__ = __webpack_require__("./src/app/auth/alert/alert.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__auth_authentication_service__ = __webpack_require__("./src/app/auth/authentication.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__shopping_cart_cart_service__ = __webpack_require__("./src/app/shopping-cart/cart.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_service_component__ = __webpack_require__("./src/app/services/service.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_cosmetics_cosmetics_component__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_cosmetics_cosme_detail_cosme_detail_component__ = __webpack_require__("./src/app/services/cosmetics/cosme-detail/cosme-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__auth_register_register_component__ = __webpack_require__("./src/app/auth/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__auth_alert_alert_component__ = __webpack_require__("./src/app/auth/alert/alert.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ngx_bootstrap_modal__ = __webpack_require__("./node_modules/ngx-bootstrap/modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_bootstrap_carousel__ = __webpack_require__("./node_modules/ngx-bootstrap/carousel/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ngx_bootstrap_dropdown__ = __webpack_require__("./node_modules/ngx-bootstrap/dropdown/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_cosmetics_cosmetics_services__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__auth_user_user_service__ = __webpack_require__("./src/app/auth/user/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__auth_alert_alert_service__ = __webpack_require__("./src/app/auth/alert/alert.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__auth_authentication_service__ = __webpack_require__("./src/app/auth/authentication.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__shopping_cart_cart_service__ = __webpack_require__("./src/app/shopping-cart/cart.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -261,31 +278,32 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__["a" /* HomepageComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__header_header_component__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__services_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__services_cosmetics_cosme_detail_cosme_detail_component__["a" /* CosmeDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__auth_alert_alert_component__["a" /* AlertComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__auth_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__services_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__services_cosmetics_cosme_detail_cosme_detail_component__["a" /* CosmeDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__auth_alert_alert_component__["a" /* AlertComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__auth_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__services_service_component__["a" /* ServicesComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_20__agm_core__["a" /* AgmCoreModule */].forRoot({
+                __WEBPACK_IMPORTED_MODULE_21__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyB1WkwOaj1w7_KPBS640_8R99UVThmjDu0'
                 }),
                 __WEBPACK_IMPORTED_MODULE_11__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_18_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_19_ngx_bootstrap_carousel__["a" /* CarouselModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_21_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_19_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_20_ngx_bootstrap_carousel__["a" /* CarouselModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_22_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_22__services_cosmetics_cosmetics_services__["a" /* CosmeticsService */],
-                __WEBPACK_IMPORTED_MODULE_23__auth_user_user_service__["a" /* UserService */],
-                __WEBPACK_IMPORTED_MODULE_24__auth_alert_alert_service__["a" /* AlertService */],
-                __WEBPACK_IMPORTED_MODULE_25__auth_authentication_service__["a" /* AuthenticationService */],
-                __WEBPACK_IMPORTED_MODULE_26__auth_auth_guard_service__["a" /* AuthGuard */],
-                __WEBPACK_IMPORTED_MODULE_28__shopping_cart_cart_service__["a" /* CartService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_23__services_cosmetics_cosmetics_services__["a" /* CosmeticsService */],
+                __WEBPACK_IMPORTED_MODULE_24__auth_user_user_service__["a" /* UserService */],
+                __WEBPACK_IMPORTED_MODULE_25__auth_alert_alert_service__["a" /* AlertService */],
+                __WEBPACK_IMPORTED_MODULE_26__auth_authentication_service__["a" /* AuthenticationService */],
+                __WEBPACK_IMPORTED_MODULE_27__auth_auth_guard_service__["a" /* AuthGuard */],
+                __WEBPACK_IMPORTED_MODULE_29__shopping_cart_cart_service__["a" /* CartService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -378,7 +396,7 @@ var AlertService = /** @class */ (function () {
         this.subject = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__["a" /* Subject */]();
         this.alertChanged = false;
         router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationStart */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* NavigationStart */]) {
                 if (_this.alertChanged) {
                     _this.alertChanged = false;
                 }
@@ -403,7 +421,7 @@ var AlertService = /** @class */ (function () {
     };
     AlertService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]])
     ], AlertService);
     return AlertService;
 }());
@@ -450,7 +468,7 @@ var AuthGuard = /** @class */ (function () {
     };
     AuthGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__authentication_service__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__authentication_service__["a" /* AuthenticationService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]])
     ], AuthGuard);
     return AuthGuard;
 }());
@@ -589,7 +607,7 @@ var LoginComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/auth/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__user_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_4__authentication_service__["a" /* AuthenticationService */],
             __WEBPACK_IMPORTED_MODULE_5__alert_alert_service__["a" /* AlertService */]])
@@ -669,7 +687,7 @@ var RegisterComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/auth/register/register.component.html"),
             styles: [__webpack_require__("./src/app/auth/register/register.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */],
             __WEBPACK_IMPORTED_MODULE_2__user_user_service__["a" /* UserService */]])
     ], RegisterComponent);
     return RegisterComponent;
@@ -846,14 +864,14 @@ var FooterComponent = /** @class */ (function () {
 /***/ "./src/app/header/header.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "/* .header{\n    background: url('../../assets/img/bg-banner03.jpg') no-repeat fixed;\n    background-size: cover;\n    min-height: 630px;\n    position: relative;\n}\n\n.bg-color{\n    \n    background-color:rgba(0,0,0,0.67);\n    min-height:650px;\n} */\n/* \n.navbar{\n    background-color:black;\n    border: 0px;\n    padding:10px 0;\n    transition: all 0.3s;\n}\n\n.navbar-brand{\n    font-size:30px;\n    font-family: 'Satisfy',cursive;\n    margin: 0 0 0 150px;\n}\n\n.navbar-nav{\n    margin: 0 150px 0 0 ;\n}\n\n.nav-item{\n    margin-right: 20px;\n}\n\n.nav-item>a{\n    font-size:14px;\n    font-weight: 400;\n    color:#fff;\n    outline:none;\n}\n\n.nav-item>a:hover, .nav-item>a:focus{\n    color:#bfd159;\n    background-color: transparent;\n} */\nheader{\n    padding-bottom: 5em;\n    background-size: cover;\n}\nnav .navbar-brand{\n    font-size:30px;\n    font-family: Arial, Helvetica, sans-serif;\n    padding-left: 100px;\n    \n}\nnav > ul li a{\n    padding-bottom: 5px;\n    color:#000;\n    position: relative;\n    font-weight: 400;\n}\n#dropdown-menu-services{\n    text-decoration: none;\n}\n\n\n"
+module.exports = "/* .header{\n    background: url('../../assets/img/bg-banner03.jpg') no-repeat fixed;\n    background-size: cover;\n    min-height: 630px;\n    position: relative;\n}\n\n.bg-color{\n    \n    background-color:rgba(0,0,0,0.67);\n    min-height:650px;\n} */\n/* \n.navbar{\n    background-color:black;\n    border: 0px;\n    padding:10px 0;\n    transition: all 0.3s;\n}\n\n.navbar-brand{\n    font-size:30px;\n    font-family: 'Satisfy',cursive;\n    margin: 0 0 0 150px;\n}\n\n.navbar-nav{\n    margin: 0 150px 0 0 ;\n}\n\n.nav-item{\n    margin-right: 20px;\n}\n\n.nav-item>a{\n    font-size:14px;\n    font-weight: 400;\n    color:#fff;\n    outline:none;\n}\n\n.nav-item>a:hover, .nav-item>a:focus{\n    color:#bfd159;\n    background-color: transparent;\n} */\nheader{\n    padding-bottom: 5em;\n    background-size: cover;\n    \n}\nnav .navbar-brand{\n    font-size:30px;\n    font-family: Arial, Helvetica, sans-serif;\n    padding-left: 100px;\n    \n}\nnav > ul li a{\n    padding-bottom: 5px;\n    color:#000;\n    position: relative;\n    font-weight: 400;\n}\n#dropdown-menu-services{\n    text-decoration: none;\n}\n\n\n"
 
 /***/ }),
 
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\n    <div class=\"bg-color\">\n        <header id=\"main-header\">\n            <nav class=\"navbar navbar-expand-sm  navbar-light  fixed-top\" [ngStyle]=\"{backgroundColor:checkScroll()}\">\n                <a class=\"navbar-brand\" routerLink=\"\">Lareina Studio </a>\n                <ul class=\"navbar-nav mx-auto \">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"/\" routerActive=\"active\">Welcome</a>\n                    </li>\n                    <li class=\"nav-item\" >\n                        <a class=\"nav-link\" routerLink=\"about\" routerActive=\"active\">About</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"portfolio\" routerActive=\"active\">Portfolio</a>\n                    </li>\n                    <!-- <li class=\"nav-item dropdown\" (mouseenter)=\"onMouseenter()\" >\n                        <a class=\"nav-link\" style=\"cursor:pointer;\">Services</a>\n                                <ul class=\"dropdown-menu\" [style.display]=\"isshow===true?'block':'none'\" (mouseleave)=\"onMouseleave()\">\n                                        <li>\n                                            <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                            <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                            <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                                        </li>\n                                    </ul>\n                    </li> -->\n                    <li class=\"nav-item dropdown\" id=\"dropdown-services\"   >\n                            <a class=\"nav-link\" style=\"cursor:pointer;\">Services</a>\n                                    <ul class=\"dropdown-menu\" id=\"dropdown-menu-services\"  >\n                                            <li>\n                                                <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                                <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                                <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                                            </li>\n                                        </ul>\n                        </li>\n                  \n                \n\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"contact\" routerActive=\"active\">Contact</a>\n                    </li>\n\n                </ul>\n                <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                                <a class=\"nav-link\" routerLink=\"register\" routerActive=\"active\">Signup</a>\n                            </li>\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                        <a class=\"nav-link\" routerLink=\"login\" routerActive=\"active\">login</a>\n                    </li>\n                    <li class=\"nav-item dropdown\" dropdown *ngIf=\"isLoggin\">\n                        <button class=\"btn btn-secondary btn-sm\" dropdownToggle (click)=\"false\" style=\"cursor:pointer;\">Manage</button>\n                        <ul *dropdownMenu class=\"dropdown-menu\">\n                            <li>\n                                <a class=\"nav-link dropdown-item\" routerLink=\"/shopping-cart\">My Shopping cart</a>\n                                <div class=\"dropdown-divider\"></div>\n                                <a class=\"nav-link dropdown-item\" (click)=\"logout()\">Logout</a>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n\n            </nav>\n        </header>\n    </div>\n</div>"
+module.exports = "<div class=\"header\">\n    <div class=\"bg-color\">\n        <header id=\"main-header\">\n            <nav class=\"navbar navbar-expand-sm  navbar-light  fixed-top\" [ngStyle]=\"{backgroundColor:checkScroll()}\">\n                <a class=\"navbar-brand\" routerLink=\"\">Lareina Studio </a>\n                <ul class=\"navbar-nav mx-auto \">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"/\" routerActive=\"active\">Welcome</a>\n                    </li>\n                    <li class=\"nav-item\" >\n                        <a class=\"nav-link\" routerLink=\"about\" routerActive=\"active\">About</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"portfolio\" routerActive=\"active\">Portfolio</a>\n                    </li>\n                    <!-- <li class=\"nav-item dropdown\" (mouseenter)=\"onMouseenter()\" >\n                        <a class=\"nav-link\" style=\"cursor:pointer;\">Services</a>\n                                <ul class=\"dropdown-menu\" [style.display]=\"isshow===true?'block':'none'\" (mouseleave)=\"onMouseleave()\">\n                                        <li>\n                                            <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                            <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                            <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                                        </li>\n                                    </ul>\n                    </li> -->\n                    <li class=\"nav-item dropdown\" id=\"dropdown-services\"   >\n                            <a class=\"nav-link\" style=\"cursor:pointer;\" routerLink=\"services\" routerActive=\"active\">Services</a>\n                                    <ul class=\"dropdown-menu\" id=\"dropdown-menu-services\"  >\n                                            <li>\n                                                <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                                <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                                <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                                            </li>\n                                        </ul>\n                        </li>\n                  \n                \n\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"contact\" routerActive=\"active\">Contact</a>\n                    </li>\n\n                </ul>\n                <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                                <a class=\"nav-link\" routerLink=\"register\" routerActive=\"active\">Signup</a>\n                            </li>\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                        <a class=\"nav-link\" routerLink=\"login\" routerActive=\"active\">login</a>\n                    </li>\n                    <li class=\"nav-item dropdown\" dropdown *ngIf=\"isLoggin\">\n                        <button class=\"btn btn-secondary btn-sm\" dropdownToggle (click)=\"false\" style=\"cursor:pointer;\">Manage</button>\n                        <ul *dropdownMenu class=\"dropdown-menu\">\n                            <li>\n                                <a class=\"nav-link dropdown-item\" routerLink=\"/shopping-cart\">My Shopping cart</a>\n                                <div class=\"dropdown-divider\"></div>\n                                <a class=\"nav-link dropdown-item\" (click)=\"logout()\">Logout</a>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n\n            </nav>\n        </header>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -925,14 +943,14 @@ var HeaderComponent = /** @class */ (function () {
 /***/ "./src/app/homepage/homepage.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".bg-overlay{\n    background: url('port03.3c00d9b82be4f801c7c6.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.bg-overlay-2{\n    background: url('port02.b60a75e512c4f3c7223d.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.overlay{\n    background-color: rgba(0,0,0,0.67);\n    min-height:500px;\n}\n\n.wrapper-message{\n    color: white;\n    position: absolute;\n    left: 0;\n    top: 40%;\n    width: 100%;\n    text-align: center;\n    font-size: 50px;\n}\n\nsection {\n\tposition: relative;\n}\n\nsection.padding{\n    padding:20px;\n}\n\nsection.bg-grey {\n\tbackground-color: #f9f9f9;\n}\n\nsection .section-title {\n\tfont-size: 34px;\n}\n\nsection .section-lead {\n\tfont-size: 18px;\n\tfont-weight: 200;\n\tmargin-top: 15px;\n}\n\n.direct-button{\n    font-size:25px;\n    margin:20px 0;\n}\n\nagm-map{\n    height:400px;\n    padding: 10px;\n    \n}"
+module.exports = ".bg-overlay{\n    background: url('port03.3c00d9b82be4f801c7c6.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.bg-overlay-2{\n    background: url('port02.b60a75e512c4f3c7223d.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.bg-overlay-3{\n    background: url('bg-banner03.d0e0f565892be726616a.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n.overlay{\n    background-color: rgba(0,0,0,0.67);\n    min-height:500px;\n}\n\n.wrapper-message{\n    color: white;\n    position: absolute;\n    left: 0;\n    top: 40%;\n    width: 100%;\n    text-align: center;\n    font-size: 50px;\n}\n\nsection {\n\tposition: relative;\n}\n\nsection.padding{\n    padding:20px;\n}\n\nsection.bg-grey {\n\tbackground-color: #f9f9f9;\n}\n\nsection .section-title {\n\tfont-size: 34px;\n}\n\nsection .section-lead {\n\tfont-size: 18px;\n\tfont-weight: 200;\n\tmargin-top: 15px;\n}\n\n.direct-button{\n    font-size:25px;\n    margin:20px 0;\n}\n\nagm-map{\n    height:400px;\n    padding: 10px;\n    \n}"
 
 /***/ }),
 
 /***/ "./src/app/homepage/homepage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"bg-overlay\">\n    <div class=\"overlay\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"wrapper-message\">\n                <h1>Beauty</h1>\n            </div>\n        </div>\n    </div>\n</section>\n<section class=\"padding bg-grey\">\n    <div class=\"container\">\n        <h2 class=\"section-title text-center\">Introducing our beauty team</h2>\n        <p class=\"section-lead text-center text-muted\">Send us your inquiry, we will help you and reply as soon as possible</p>\n    </div>\n    <div style=\"text-align:center;\">\n        <button class=\"btn btn-outline-secondary direct-button\" routerLink=\"about\">Discover more</button>\n    </div>\n    <hr/>\n</section>\n\n<section class=\"bg-overlay-2\">\n        <div class=\"overlay\">\n            <div class=\"row justify-content-md-center\">\n                <div class=\"wrapper-message\">\n                    <h1>Gallery</h1>\n                </div>\n            </div>\n        </div>\n    </section>\n<section class=\"padding bg-grey\">\n    <div class=\"container\">\n        <h2 class=\"section-title text-center\">See our beautiful work</h2>\n        <p class=\"section-lead text-center text-muted\">Send us your inquiry, we will help you and reply as soon as possible</p>\n    </div>\n    <div style=\"text-align:center;\">\n        <button class=\"btn btn-outline-secondary direct-button\" >View Photos</button>\n    </div>\n    <hr/>\n</section>\n\n<section name=\"company-map\">\n        <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"16\">\n                        <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n                    </agm-map>\n                </div>\n        </div>\n</section>\n\n\n"
+module.exports = "<section class=\"bg-overlay\">\n    <div class=\"overlay\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"wrapper-message\">\n                <h1>Beauty</h1>\n            </div>\n        </div>\n    </div>\n</section>\n<section class=\"padding bg-grey\">\n    <div class=\"container\">\n        <h2 class=\"section-title text-center\">Introducing our beauty team</h2>\n        <p class=\"section-lead text-center text-muted\">Send us your inquiry, we will help you and reply as soon as possible</p>\n    </div>\n    <div style=\"text-align:center;\">\n        <button class=\"btn btn-outline-secondary direct-button\" routerLink=\"about\">Discover more</button>\n    </div>\n    <hr/>\n</section>\n\n<section class=\"bg-overlay-2\">\n        <div class=\"overlay\">\n            <div class=\"row justify-content-md-center\">\n                <div class=\"wrapper-message\">\n                    <h1>Gallery</h1>\n                </div>\n            </div>\n        </div>\n    </section>\n<section class=\"padding bg-grey\">\n    <div class=\"container\">\n        <h2 class=\"section-title text-center\">See our beautiful work</h2>\n        <p class=\"section-lead text-center text-muted\">Send us your inquiry, we will help you and reply as soon as possible</p>\n    </div>\n    <div style=\"text-align:center;\">\n        <button class=\"btn btn-outline-secondary direct-button\" routerLink=\"portfolio\" >View Photos</button>\n    </div>\n    <hr/>\n</section>\n\n<section class=\"bg-overlay-3\">\n    <div class=\"overlay\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"wrapper-message\">\n                <h1>Services</h1>\n            </div>\n        </div>\n    </div>\n</section>\n<section class=\"padding bg-grey\">\n<div class=\"container\">\n    <h2 class=\"section-title text-center\">Explore our services</h2>\n    <p class=\"section-lead text-center text-muted\">Send us your inquiry, we will help you and reply as soon as possible</p>\n</div>\n<div style=\"text-align:center;\">\n    <button class=\"btn btn-outline-secondary direct-button\" routerLink=\"services\" >Explore Services</button>\n</div>\n<hr/>\n</section>\n\n<section name=\"company-map\">\n        <div class=\"row\">\n                <div class=\"col-md-12\">\n                    <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"16\">\n                        <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n                    </agm-map>\n                </div>\n        </div>\n</section>\n\n\n"
 
 /***/ }),
 
@@ -977,14 +995,14 @@ var HomepageComponent = /** @class */ (function () {
 /***/ "./src/app/portfolio/portfolio.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".title{\n    font-size: 24px;\n    margin-bottom: 50px;\n}\n\n.title-text{\n    padding:0px 25px 0px 0px;\n    border-right: 5px solid #BE2525;\n    font-size: 24px;\n}\n\n#portfolio{\n    background-color: #f0f1e9;\n}\n\n.section-padding{\n    padding:60px 0px;\n}\n\n.grid-padding{\n    padding:0 8px;\n}\n\n.grid-padding img{\n    margin-bottom: 15px;\n}\n\n.padding-right-zero{\n    padding-right:0px !important;\n}\n\n#myGrid{\n    margin-top: 50px;\n}\n\n.fadeInRight{\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n}\n\n/* .arrow-back, .arrow-forward{\n\tposition:absolute;\n\topacity:0.9;\n\tbackground-color:black;\n\tpadding:10px;\n\ttop:190;\n\tcolor:white;\n\ttext-weight:bold;\n\tcursor:pointer;\n} */\n\n.arrow-back{\n    position: absolute;\n    background-color: grey;\n    top:250px;\n    left: 0px;\n    padding:4px;\n    cursor: pointer;\n    \n}\n\n.arrow-forward{\n    position: absolute;\n    background-color: grey;\n    top:250px;\n    padding:4px;\n    right:0;\n    cursor: pointer;\n    float: right ;\n}\n"
+module.exports = ".bg-overlay-2{\n    background: url('port02.b60a75e512c4f3c7223d.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n\n\n.overlay{\n    background-color: rgba(0,0,0,0.67);\n    min-height:500px;\n}\n\n\n\n.wrapper-message{\n    color: white;\n    position: absolute;\n    left: 0;\n    top: 40%;\n    width: 100%;\n    text-align: center;\n    font-size: 50px;\n}\n\n\n\nsection {\n\tposition: relative;\n}\n\n\n\n.section-padding{\n    padding:60px 0px;\n}\n\n\n\n.grid-padding{\n    padding:0 8px;\n}\n\n\n\n.grid-padding img{\n    margin-bottom: 15px;\n}\n\n\n\n.padding-right-zero{\n    padding-right:0px !important;\n}\n\n\n\n#myGrid{\n    margin-top: 50px;\n}\n\n\n\n.fadeInRight{\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n}\n\n\n\n/* .arrow-back, .arrow-forward{\n\tposition:absolute;\n\topacity:0.9;\n\tbackground-color:black;\n\tpadding:10px;\n\ttop:190;\n\tcolor:white;\n\ttext-weight:bold;\n\tcursor:pointer;\n} */\n\n\n\n.arrow-back{\n    position: absolute;\n    background-color: grey;\n    top:250px;\n    left: 0px;\n    padding:4px;\n    cursor: pointer;\n    \n}\n\n\n\n.arrow-forward{\n    position: absolute;\n    background-color: grey;\n    top:250px;\n    padding:4px;\n    right:0;\n    cursor: pointer;\n    float: right ;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/portfolio/portfolio.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"portfolio\" class=\"section-padding\">\n  <div class=\"container\">\n      <div class=\"row\">\n          <div class=\"col-md-12\">\n              <h2 class=\"title text-center\">Lets See My work</h2>\n          </div>\n          <div class=\"col-md-12\">\n              <div id=\"myGrid\" class=\"grid-padding fadeInRight\">\n                  <div class=\"row\">\n                      <div class=\"col-md-4 col-sm-4 padding-right-zero\" *ngFor=\"let image of images;let i=index\" >\n                          <img [src]=\"image.imgUrl\" data-toggle=\"modal\" class=\"img-fluid\" (click)=openImage(template);>\n                          <ng-template #template> \n                            <!-- <div class=\"modal-header\">\n                                <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n                                  <span aria-hidden=\"true\">&times;</span>\n                                </button>\n                              </div>\n                              <div class=\"modal-body\">\n                                <img [src]=\"image.imgUrl\" class=\"img-fluid\" style=\"height:500px; width:100%\">\n                                <div class=\"arrow-back text-left\" (click)=\"navigateBack(image)\">\n                                    &lt;\n                                 </div>\n                                 <div class=\"arrow-forward text-right\" (click)=\"navigateForward(true)\">\n                                    &gt;\n                                 </div>\n                               </div> -->\n                            <carousel>\n                            <slide *ngFor=\"let image of images\">\n                                <img [src]=\"image.imgUrl\" alt=\"First slide\" style=\"display: block; width: 100%;height:500px;\">\n                            </slide>\n                            </carousel> \n                          </ng-template>\n                      </div>\n                  </div>\n                  \n              </div>\n          </div>\n      </div>\n  </div>\n</section>"
+module.exports = "<section class=\"bg-overlay-2\">\n    <div class=\"overlay\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"wrapper-message\">\n                <h1>Gallery</h1>\n            </div>\n        </div>\n    </div>\n</section>\n\n<section id=\"portfolio\" class=\"section-padding\">\n  <div class=\"container\">\n      <div class=\"row\">\n          <div class=\"col-md-12\">\n              <h2 class=\"title text-center\">Lets See My work</h2>\n          </div>\n          <div class=\"col-md-12\">\n              <div id=\"myGrid\" class=\"grid-padding fadeInRight\">\n                  <div class=\"row\">\n                      <div class=\"col-md-4 col-sm-4 padding-right-zero\" *ngFor=\"let image of images;let i=index\" >\n                          <img [src]=\"image.imgUrl\" data-toggle=\"modal\" class=\"img-fluid\" (click)=openImage(template);>\n                          <ng-template #template> \n                            <!-- <div class=\"modal-header\">\n                                <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n                                  <span aria-hidden=\"true\">&times;</span>\n                                </button>\n                              </div>\n                              <div class=\"modal-body\">\n                                <img [src]=\"image.imgUrl\" class=\"img-fluid\" style=\"height:500px; width:100%\">\n                                <div class=\"arrow-back text-left\" (click)=\"navigateBack(image)\">\n                                    &lt;\n                                 </div>\n                                 <div class=\"arrow-forward text-right\" (click)=\"navigateForward(true)\">\n                                    &gt;\n                                 </div>\n                               </div> -->\n                            <carousel>\n                            <slide *ngFor=\"let image of images\">\n                                <img [src]=\"image.imgUrl\" alt=\"First slide\" style=\"display: block; width: 100%;height:500px;\">\n                            </slide>\n                            </carousel> \n                          </ng-template>\n                      </div>\n                  </div>\n                  \n              </div>\n          </div>\n      </div>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -1272,6 +1290,52 @@ var CosmeticsService = /** @class */ (function () {
 }());
 
 
+
+/***/ }),
+
+/***/ "./src/app/services/service.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServicesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ServicesComponent = /** @class */ (function () {
+    function ServicesComponent() {
+    }
+    ServicesComponent.prototype.ngOnInit = function () {
+    };
+    ServicesComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-services',
+            template: __webpack_require__("./src/app/services/services.component.html"),
+            styles: [__webpack_require__("./src/app/services/services.component.css")]
+        })
+    ], ServicesComponent);
+    return ServicesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/services.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".bg-overlay-3{\n    background: url('bg-banner03.d0e0f565892be726616a.jpg') fixed;\n    background-size:cover;\n    position: relative;\n    min-height:500px;\n    \n}\n\n\n.overlay{\n    background-color: rgba(0,0,0,0.67);\n    min-height:500px;\n}\n\n\n.wrapper-message{\n    color: white;\n    position: absolute;\n    left: 0;\n    top: 40%;\n    width: 100%;\n    text-align: center;\n    font-size: 50px;\n}\n\n\nsection {\n\tposition: relative;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/services/services.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"bg-overlay-3\">\n    <div class=\"overlay\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"wrapper-message\">\n                <h1>Services</h1>\n            </div>\n        </div>\n    </div>\n</section>\n\n<p>\n    services works\n</p>"
 
 /***/ }),
 
