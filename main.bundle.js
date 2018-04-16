@@ -80,19 +80,17 @@ var AboutComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__contact_contact_component__ = __webpack_require__("./src/app/contact/contact.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__service_service_component__ = __webpack_require__("./src/app/service/service.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__service_cosmetics_cosmetics_component__ = __webpack_require__("./src/app/service/cosmetics/cosmetics.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__service_cosmetics_cosme_detail_cosme_detail_component__ = __webpack_require__("./src/app/service/cosmetics/cosme-detail/cosme-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__auth_register_register_component__ = __webpack_require__("./src/app/auth/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_cosmetics_cosmetics_component__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_cosmetics_cosme_detail_cosme_detail_component__ = __webpack_require__("./src/app/services/cosmetics/cosme-detail/cosme-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_register_register_component__ = __webpack_require__("./src/app/auth/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -113,12 +111,11 @@ var appRoutes = [
     { path: 'rates', component: __WEBPACK_IMPORTED_MODULE_4__rates_rates_component__["a" /* RatesComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_5__auth_login_login_component__["a" /* LoginComponent */], },
     { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_6__contact_contact_component__["a" /* ContactComponent */] },
-    { path: 'service', component: __WEBPACK_IMPORTED_MODULE_8__service_service_component__["a" /* ServiceComponent */] },
-    { path: 'cosmetics', component: __WEBPACK_IMPORTED_MODULE_9__service_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */] },
-    { path: 'cosmetics/:name', component: __WEBPACK_IMPORTED_MODULE_10__service_cosmetics_cosme_detail_cosme_detail_component__["a" /* CosmeDetailComponent */] },
+    { path: 'cosmetics', component: __WEBPACK_IMPORTED_MODULE_8__services_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */] },
+    { path: 'cosmetics/:name', component: __WEBPACK_IMPORTED_MODULE_9__services_cosmetics_cosme_detail_cosme_detail_component__["a" /* CosmeDetailComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_5__auth_login_login_component__["a" /* LoginComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_11__auth_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'shopping-cart', component: __WEBPACK_IMPORTED_MODULE_13__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__auth_auth_guard_service__["a" /* AuthGuard */]] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__auth_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'shopping-cart', component: __WEBPACK_IMPORTED_MODULE_12__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_11__auth_auth_guard_service__["a" /* AuthGuard */]] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -186,35 +183,34 @@ var AppComponent = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__portfolio_portfolio_component__ = __webpack_require__("./src/app/portfolio/portfolio.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rates_rates_component__ = __webpack_require__("./src/app/rates/rates.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__contact_contact_component__ = __webpack_require__("./src/app/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__homepage_homepage_component__ = __webpack_require__("./src/app/homepage/homepage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__service_service_component__ = __webpack_require__("./src/app/service/service.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__portfolio_portfolio_component__ = __webpack_require__("./src/app/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__rates_rates_component__ = __webpack_require__("./src/app/rates/rates.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__contact_contact_component__ = __webpack_require__("./src/app/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__auth_login_login_component__ = __webpack_require__("./src/app/auth/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__ = __webpack_require__("./src/app/homepage/homepage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__service_cosmetics_cosmetics_component__ = __webpack_require__("./src/app/service/cosmetics/cosmetics.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__service_cosmetics_cosme_detail_cosme_detail_component__ = __webpack_require__("./src/app/service/cosmetics/cosme-detail/cosme-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_cosmetics_cosmetics_component__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_cosmetics_cosme_detail_cosme_detail_component__ = __webpack_require__("./src/app/services/cosmetics/cosme-detail/cosme-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__auth_register_register_component__ = __webpack_require__("./src/app/auth/register/register.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__auth_alert_alert_component__ = __webpack_require__("./src/app/auth/alert/alert.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ngx_bootstrap_modal__ = __webpack_require__("./node_modules/ngx-bootstrap/modal/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ngx_bootstrap_carousel__ = __webpack_require__("./node_modules/ngx-bootstrap/carousel/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_ngx_bootstrap_dropdown__ = __webpack_require__("./node_modules/ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__service_cosmetics_cosmetics_services__ = __webpack_require__("./src/app/service/cosmetics/cosmetics.services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_cosmetics_cosmetics_services__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.services.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__auth_user_user_service__ = __webpack_require__("./src/app/auth/user/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__auth_alert_alert_service__ = __webpack_require__("./src/app/auth/alert/alert.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__auth_authentication_service__ = __webpack_require__("./src/app/auth/authentication.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__shopping_cart_cart_service__ = __webpack_require__("./src/app/shopping-cart/cart.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__shopping_cart_cart_service__ = __webpack_require__("./src/app/shopping-cart/cart.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -250,49 +246,47 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__portfolio_portfolio_component__["a" /* PortfolioComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__rates_rates_component__["a" /* RatesComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__contact_contact_component__["a" /* ContactComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__auth_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__homepage_homepage_component__["a" /* HomepageComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__service_service_component__["a" /* ServiceComponent */],
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__portfolio_portfolio_component__["a" /* PortfolioComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__rates_rates_component__["a" /* RatesComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__contact_contact_component__["a" /* ContactComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__auth_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__homepage_homepage_component__["a" /* HomepageComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__header_header_component__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__service_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__service_cosmetics_cosme_detail_cosme_detail_component__["a" /* CosmeDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__services_cosmetics_cosmetics_component__["a" /* CosmeticsComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__services_cosmetics_cosme_detail_cosme_detail_component__["a" /* CosmeDetailComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__auth_alert_alert_component__["a" /* AlertComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__auth_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_27__angular_common_http__["a" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_20__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyB1WkwOaj1w7_KPBS640_8R99UVThmjDu0'
                 }),
-                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_11__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_18_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_19_ngx_bootstrap_carousel__["a" /* CarouselModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_21_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_22__service_cosmetics_cosmetics_services__["a" /* CosmeticsService */],
+            providers: [__WEBPACK_IMPORTED_MODULE_22__services_cosmetics_cosmetics_services__["a" /* CosmeticsService */],
                 __WEBPACK_IMPORTED_MODULE_23__auth_user_user_service__["a" /* UserService */],
                 __WEBPACK_IMPORTED_MODULE_24__auth_alert_alert_service__["a" /* AlertService */],
                 __WEBPACK_IMPORTED_MODULE_25__auth_authentication_service__["a" /* AuthenticationService */],
                 __WEBPACK_IMPORTED_MODULE_26__auth_auth_guard_service__["a" /* AuthGuard */],
-                __WEBPACK_IMPORTED_MODULE_29__shopping_cart_cart_service__["a" /* CartService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+                __WEBPACK_IMPORTED_MODULE_28__shopping_cart_cart_service__["a" /* CartService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -852,14 +846,14 @@ var FooterComponent = /** @class */ (function () {
 /***/ "./src/app/header/header.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "/* .header{\n    background: url('../../assets/img/bg-banner03.jpg') no-repeat fixed;\n    background-size: cover;\n    min-height: 630px;\n    position: relative;\n}\n\n.bg-color{\n    \n    background-color:rgba(0,0,0,0.67);\n    min-height:650px;\n} */\n/* \n.navbar{\n    background-color:black;\n    border: 0px;\n    padding:10px 0;\n    transition: all 0.3s;\n}\n\n.navbar-brand{\n    font-size:30px;\n    font-family: 'Satisfy',cursive;\n    margin: 0 0 0 150px;\n}\n\n.navbar-nav{\n    margin: 0 150px 0 0 ;\n}\n\n.nav-item{\n    margin-right: 20px;\n}\n\n.nav-item>a{\n    font-size:14px;\n    font-weight: 400;\n    color:#fff;\n    outline:none;\n}\n\n.nav-item>a:hover, .nav-item>a:focus{\n    color:#bfd159;\n    background-color: transparent;\n} */\nheader{\n    padding-bottom: 5em;\n    background-size: cover;\n}\nnav .navbar-brand{\n    font-size:30px;\n    font-family: Arial, Helvetica, sans-serif;\n    padding-left: 100px;\n    \n}\nnav > ul li a{\n    padding-bottom: 5px;\n    color:#000;\n    position: relative;\n    font-weight: 400;\n}\n\n"
+module.exports = "/* .header{\n    background: url('../../assets/img/bg-banner03.jpg') no-repeat fixed;\n    background-size: cover;\n    min-height: 630px;\n    position: relative;\n}\n\n.bg-color{\n    \n    background-color:rgba(0,0,0,0.67);\n    min-height:650px;\n} */\n/* \n.navbar{\n    background-color:black;\n    border: 0px;\n    padding:10px 0;\n    transition: all 0.3s;\n}\n\n.navbar-brand{\n    font-size:30px;\n    font-family: 'Satisfy',cursive;\n    margin: 0 0 0 150px;\n}\n\n.navbar-nav{\n    margin: 0 150px 0 0 ;\n}\n\n.nav-item{\n    margin-right: 20px;\n}\n\n.nav-item>a{\n    font-size:14px;\n    font-weight: 400;\n    color:#fff;\n    outline:none;\n}\n\n.nav-item>a:hover, .nav-item>a:focus{\n    color:#bfd159;\n    background-color: transparent;\n} */\nheader{\n    padding-bottom: 5em;\n    background-size: cover;\n}\nnav .navbar-brand{\n    font-size:30px;\n    font-family: Arial, Helvetica, sans-serif;\n    padding-left: 100px;\n    \n}\nnav > ul li a{\n    padding-bottom: 5px;\n    color:#000;\n    position: relative;\n    font-weight: 400;\n}\n#dropdown-menu-services{\n    text-decoration: none;\n}\n\n\n"
 
 /***/ }),
 
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\n    <div class=\"bg-color\">\n        <header id=\"main-header\">\n            <nav class=\"navbar navbar-expand-sm  navbar-light  fixed-top\" [ngStyle]=\"{backgroundColor:checkScroll()}\">\n                <a class=\"navbar-brand\" routerLink=\"\">Lareina Studio </a>\n                <ul class=\"navbar-nav mx-auto \">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"about\" routerActive=\"active\">About</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"portfolio\" routerActive=\"active\">Portfolio</a>\n                    </li>\n                    <li class=\"nav-item dropdown\" dropdown>\n                        <a class=\"nav-link\" dropdownToggle (click)=\"false\" style=\"cursor:pointer;\">Services</a>\n                        <ul *dropdownMenu class=\"dropdown-menu\">\n                            <li>\n                                <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                            </li>\n                        </ul>\n                    </li>\n\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"contact\" routerActive=\"active\">Contact</a>\n                    </li>\n\n                </ul>\n                <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                                <a class=\"nav-link\" routerLink=\"register\" routerActive=\"active\">Signup</a>\n                            </li>\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                        <a class=\"nav-link\" routerLink=\"login\" routerActive=\"active\">login</a>\n                    </li>\n                    <li class=\"nav-item dropdown\" dropdown *ngIf=\"isLoggin\">\n                        <button class=\"btn btn-secondary btn-sm\" dropdownToggle (click)=\"false\" style=\"cursor:pointer;\">Manage</button>\n                        <ul *dropdownMenu class=\"dropdown-menu\">\n                            <li>\n                                <a class=\"nav-link dropdown-item\" routerLink=\"/shopping-cart\">My Shopping cart</a>\n                                <div class=\"dropdown-divider\"></div>\n                                <a class=\"nav-link dropdown-item\" (click)=\"logout()\">Logout</a>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n\n            </nav>\n        </header>\n    </div>\n</div>"
+module.exports = "<div class=\"header\">\n    <div class=\"bg-color\">\n        <header id=\"main-header\">\n            <nav class=\"navbar navbar-expand-sm  navbar-light  fixed-top\" [ngStyle]=\"{backgroundColor:checkScroll()}\">\n                <a class=\"navbar-brand\" routerLink=\"\">Lareina Studio </a>\n                <ul class=\"navbar-nav mx-auto \">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"/\" routerActive=\"active\">Welcome</a>\n                    </li>\n                    <li class=\"nav-item\" >\n                        <a class=\"nav-link\" routerLink=\"about\" routerActive=\"active\">About</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"portfolio\" routerActive=\"active\">Portfolio</a>\n                    </li>\n                    <!-- <li class=\"nav-item dropdown\" (mouseenter)=\"onMouseenter()\" >\n                        <a class=\"nav-link\" style=\"cursor:pointer;\">Services</a>\n                                <ul class=\"dropdown-menu\" [style.display]=\"isshow===true?'block':'none'\" (mouseleave)=\"onMouseleave()\">\n                                        <li>\n                                            <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                            <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                            <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                                        </li>\n                                    </ul>\n                    </li> -->\n                    <li class=\"nav-item dropdown\" id=\"dropdown-services\"   >\n                            <a class=\"nav-link\" style=\"cursor:pointer;\">Services</a>\n                                    <ul class=\"dropdown-menu\" id=\"dropdown-menu-services\"  >\n                                            <li>\n                                                <a class=\"nav-link dropdown-item\" routerLink=\"/rates\">Makeup</a>\n                                                <a class=\"nav-link dropdown-item\" routerLink=\"/cosmetics\">Cosmetics</a>\n                                                <a class=\"nav-link dropdown-item\" href=\"#\">Cakes</a>\n                                            </li>\n                                        </ul>\n                        </li>\n                  \n                \n\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" routerLink=\"contact\" routerActive=\"active\">Contact</a>\n                    </li>\n\n                </ul>\n                <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                                <a class=\"nav-link\" routerLink=\"register\" routerActive=\"active\">Signup</a>\n                            </li>\n                    <li class=\"nav-item\"  *ngIf=\"!isLoggin\">\n                        <a class=\"nav-link\" routerLink=\"login\" routerActive=\"active\">login</a>\n                    </li>\n                    <li class=\"nav-item dropdown\" dropdown *ngIf=\"isLoggin\">\n                        <button class=\"btn btn-secondary btn-sm\" dropdownToggle (click)=\"false\" style=\"cursor:pointer;\">Manage</button>\n                        <ul *dropdownMenu class=\"dropdown-menu\">\n                            <li>\n                                <a class=\"nav-link dropdown-item\" routerLink=\"/shopping-cart\">My Shopping cart</a>\n                                <div class=\"dropdown-divider\"></div>\n                                <a class=\"nav-link dropdown-item\" (click)=\"logout()\">Logout</a>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n\n            </nav>\n        </header>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -892,6 +886,11 @@ var HeaderComponent = /** @class */ (function () {
         this.authService.StatusChanged.subscribe(function (isloggedin) {
             _this.isLoggin = isloggedin;
         });
+        $('#dropdown-services').hover(function () {
+            $('#dropdown-menu-services').slideDown("fast");
+        }, function () {
+            $('#dropdown-menu-services').slideUp("fast");
+        });
     };
     HeaderComponent.prototype.checkScroll = function () {
         var scrollPosition = window.pageYOffset;
@@ -912,7 +911,7 @@ var HeaderComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-header',
             template: __webpack_require__("./src/app/header/header.component.html"),
-            styles: [__webpack_require__("./src/app/header/header.component.css")]
+            styles: [__webpack_require__("./src/app/header/header.component.css")],
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__auth_authentication_service__["a" /* AuthenticationService */]])
     ], HeaderComponent);
@@ -1100,28 +1099,28 @@ var RatesComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosme-detail/cosme-detail.component.css":
+/***/ "./src/app/services/cosmetics/cosme-detail/cosme-detail.component.css":
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosme-detail/cosme-detail.component.html":
+/***/ "./src/app/services/cosmetics/cosme-detail/cosme-detail.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\" style=\"padding:50px;\">\n  <div class=\"row\">\n    <div class=\"col-md-5\">\n      <img [src]=\"cosmetic.imgUrl\" class=\"img-fluid\" style=\"width:100%\">\n    </div>\n    <div class=\"col-md-7 text-center\" style=\"padding-top:30px;\">\n      <h2>{{cosmetic.name}}</h2>\n      <h3>{{cosmetic.description}}</h3>\n      <p>Price: ${{cosmetic.price}}</p>\n      <button class=\"btn btn-success\" (click)=\"onAddtoCart(cosmetic)\">Add to Cart</button>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosme-detail/cosme-detail.component.ts":
+/***/ "./src/app/services/cosmetics/cosme-detail/cosme-detail.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CosmeDetailComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cosmetics_services__ = __webpack_require__("./src/app/service/cosmetics/cosmetics.services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cosmetics_services__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.services.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shopping_cart_cart_service__ = __webpack_require__("./src/app/shopping-cart/cart.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1152,8 +1151,8 @@ var CosmeDetailComponent = /** @class */ (function () {
     CosmeDetailComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-cosme-detail',
-            template: __webpack_require__("./src/app/service/cosmetics/cosme-detail/cosme-detail.component.html"),
-            styles: [__webpack_require__("./src/app/service/cosmetics/cosme-detail/cosme-detail.component.css")]
+            template: __webpack_require__("./src/app/services/cosmetics/cosme-detail/cosme-detail.component.html"),
+            styles: [__webpack_require__("./src/app/services/cosmetics/cosme-detail/cosme-detail.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_2__cosmetics_services__["a" /* CosmeticsService */], __WEBPACK_IMPORTED_MODULE_3__shopping_cart_cart_service__["a" /* CartService */]])
     ], CosmeDetailComponent);
@@ -1164,27 +1163,27 @@ var CosmeDetailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosmetics.component.css":
+/***/ "./src/app/services/cosmetics/cosmetics.component.css":
 /***/ (function(module, exports) {
 
 module.exports = ".cos-container{\n    max-width:1200px;\n    position: relative;\n    margin: 0 auto;\n    padding-left: 15px;\n    padding-right: 15px;\n    background-color: gainsboro;\n}\n\n.card-item{\n    display: block;\n    width: 100%;\n    position: relative;\n    background: #fff;\n    overflow: hidden;\n    z-index: 9;\n    bottom: 0;\n    margin-bottom: 30px;\n}\n\n.card-item figure{\n    height:240px;\n    overflow: hidden;\n    z-index: 12;\n    position: relative;\n}\n\n.card-item img{\n    z-index: 8;\n    opacity: 1;\n\n}\n\n.card-item .card-text{\n    padding: 0px 10px 10px 20px;\n    text-align: center;\n}\n\n.card-item .card-text h2, .card-item .card-text span{\n    text-decoration: none !important;\n}\n\n.card-item .card-text h2{\n    font-size: 20px;\n    font-weight: 400;\n    margin:0 0 10px 0;\n    color:#66D37E;\n}\n\n.card-item .card-text span{\n    color:#b3b3b3;\n    font-size: 16px;\n    font-weight: 400;\n}\n\n.card-item .card-text p{\n    color: #000;\n}\n\n.card-item .card-text span.btn{\n    color: #666666 !important;\n    opacity: 1;\n    visibility: visible;\n    bottom: 0;\n    background: #ebebeb;\n    border:2px solid #ebebeb !important;\n    position: relative;\n}"
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosmetics.component.html":
+/***/ "./src/app/services/cosmetics/cosmetics.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"cos-container\">\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-md-4 col-sm-6\" *ngFor=\"let cosme of cosmetics\" >\n      <a  class=\"card-item\" [routerLink]=\"[cosme.name]\">\n        <figure>\n            <img [src]=\"cosme.imgUrl\" alt=\"cosmetic\" class=\"img-fluid\">\n        </figure>\n        <div class=\"card-text\">\n          <h2>{{cosme.name}}</h2>\n          <p>Price: ${{cosme.price}}</p>\n          <p><span class=\"btn btn-primary\">Learn More</span></p>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosmetics.component.ts":
+/***/ "./src/app/services/cosmetics/cosmetics.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CosmeticsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cosmetics_services__ = __webpack_require__("./src/app/service/cosmetics/cosmetics.services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cosmetics_services__ = __webpack_require__("./src/app/services/cosmetics/cosmetics.services.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1206,8 +1205,8 @@ var CosmeticsComponent = /** @class */ (function () {
     CosmeticsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-cosmetics',
-            template: __webpack_require__("./src/app/service/cosmetics/cosmetics.component.html"),
-            styles: [__webpack_require__("./src/app/service/cosmetics/cosmetics.component.css")]
+            template: __webpack_require__("./src/app/services/cosmetics/cosmetics.component.html"),
+            styles: [__webpack_require__("./src/app/services/cosmetics/cosmetics.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__cosmetics_services__["a" /* CosmeticsService */]])
     ], CosmeticsComponent);
@@ -1218,7 +1217,7 @@ var CosmeticsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/service/cosmetics/cosmetics.services.ts":
+/***/ "./src/app/services/cosmetics/cosmetics.services.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1270,56 +1269,6 @@ var CosmeticsService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shopping_cart_cart_service__["a" /* CartService */]])
     ], CosmeticsService);
     return CosmeticsService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/service/service.component.css":
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/service/service.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  service works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/service/service.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ServiceComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ServiceComponent = /** @class */ (function () {
-    function ServiceComponent() {
-    }
-    ServiceComponent.prototype.ngOnInit = function () {
-    };
-    ServiceComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-service',
-            template: __webpack_require__("./src/app/service/service.component.html"),
-            styles: [__webpack_require__("./src/app/service/service.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], ServiceComponent);
-    return ServiceComponent;
 }());
 
 
