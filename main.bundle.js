@@ -229,12 +229,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__auth_auth_guard_service__ = __webpack_require__("./src/app/auth/auth-guard.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__shopping_cart_shopping_cart_component__ = __webpack_require__("./src/app/shopping-cart/shopping-cart.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__makeup_makeup_component__ = __webpack_require__("./src/app/makeup/makeup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_cosmetics_filter_pipe__ = __webpack_require__("./src/app/services/cosmetics/filter.pipe.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -289,6 +291,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_30__shopping_cart_shopping_cart_component__["a" /* ShoppingCartComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__services_service_component__["a" /* ServicesComponent */],
                 __WEBPACK_IMPORTED_MODULE_31__makeup_makeup_component__["a" /* MakeupComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__services_cosmetics_filter_pipe__["a" /* filterPipe */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1243,14 +1246,14 @@ var CosmeDetailComponent = /** @class */ (function () {
 /***/ "./src/app/services/cosmetics/cosmetics.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".cos-container{\n    max-width:1200px;\n    position: relative;\n    margin: 0 auto;\n    padding-top: 10px;\n    padding-left: 15px;\n    padding-right: 15px;\n    background-color: gainsboro;\n}\n\n.card-item{\n    display: block;\n    width: 100%;\n    position: relative;\n    background: #fff;\n    overflow: hidden;\n    z-index: 9;\n    bottom: 0;\n    margin-bottom: 30px;\n}\n\n.card-item figure{\n    height:240px;\n    overflow: hidden;\n    z-index: 12;\n    position: relative;\n}\n\n.card-item img{\n    z-index: 8;\n    opacity: 1;\n\n}\n\n.card-item .card-text{\n    padding: 0px 10px 10px 20px;\n    text-align: center;\n}\n\n.card-item .card-text h2, .card-item .card-text span{\n    text-decoration: none !important;\n}\n\n.card-item .card-text h2{\n    font-size: 20px;\n    font-weight: 400;\n    margin:0 0 10px 0;\n    color:#66D37E;\n}\n\n.card-item .card-text span{\n    color:#b3b3b3;\n    font-size: 16px;\n    font-weight: 400;\n}\n\n.card-item .card-text p{\n    color: #000;\n}\n\n.card-item .card-text span.btn{\n    color: #666666 !important;\n    opacity: 1;\n    visibility: visible;\n    bottom: 0;\n    background: #ebebeb;\n    border:2px solid #ebebeb !important;\n    position: relative;\n}"
+module.exports = ".cos-search-bar{\n    padding:20px 200px;\n    background-color: #181d1d41;\n}\n\n.cos-container{\n    max-width:1200px;\n    min-height:1000px;\n    position: relative;\n    margin: 0 auto;\n    padding-top: 10px;\n    padding-left: 15px;\n    padding-right: 15px;\n    \n}\n\n.card-item{\n    display: block;\n    width: 100%;\n    position: relative;\n    background:lightgrey;\n    overflow: hidden;\n    z-index: 9;\n    bottom: 0;\n    margin-bottom: 30px;\n}\n\n.card-item figure{\n    height:240px;\n    overflow: hidden;\n    z-index: 12;\n    position: relative;\n}\n\n.card-item img{\n    z-index: 8;\n    opacity: 1;\n    width: 100%;\n    height:240px;\n\n}\n\n.card-item .card-text{\n    padding: 0px 10px 10px 20px;\n    text-align: center;\n}\n\n.card-item .card-text h2, .card-item .card-text span{\n    text-decoration: none !important;\n}\n\n.card-item .card-text h2{\n    font-size: 20px;\n    font-weight: 400;\n    margin:0 0 10px 0;\n    color:#66D37E;\n}\n\n.card-item .card-text span{\n    color:#b3b3b3;\n    font-size: 16px;\n    font-weight: 400;\n}\n\n.card-item .card-text p{\n    color: #000;\n}\n\n.card-item .card-text span.btn{\n    color: #666666 !important;\n    opacity: 1;\n    visibility: visible;\n    bottom: 0;\n    background: #ebebeb;\n    border:2px solid #ebebeb !important;\n    position: relative;\n}"
 
 /***/ }),
 
 /***/ "./src/app/services/cosmetics/cosmetics.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"cos-container\">\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-md-4 col-sm-6\" *ngFor=\"let cosme of cosmetics\" >\n      <a  class=\"card-item\" [routerLink]=\"[cosme.name]\">\n        <figure>\n            <img [src]=\"cosme.imgUrl\" alt=\"cosmetic\" class=\"img-fluid\">\n        </figure>\n        <div class=\"card-text\">\n          <h2>{{cosme.name}}</h2>\n          <p>Price: ${{cosme.price}}</p>\n          <p><span class=\"btn btn-primary\">Learn More</span></p>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>"
+module.exports = "\n  <div class=\"row cos-search-bar\" >\n    <div class=\"input-group mb-3\">\n      <input type=\"text\" class=\"form-control\" #Name >\n      <div class=\"input-group-append\">\n        <button class=\"btn btn-secondary\" type=\"button\" (click)=\"onSearch(Name.value)\">Search</button>\n      </div>\n    </div>\n  </div>\n  <hr/>\n  <div class=\"cos-container\">\n    <div class=\"row justify-content-center\">\n      <h2>Our Cosmetic Products</h2>\n    </div>\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-md-4 col-sm-6\" *ngFor=\"let cosme of cosmetics|filter:filteredName:'name'\" >\n      <a  class=\"card-item\" [routerLink]=\"[cosme.name]\">\n        <figure>\n            <img [src]=\"cosme.imgUrl\" alt=\"cosmetic\" class=\"img-fluid\">\n        </figure>\n        <div class=\"card-text\">\n          <h2>{{cosme.name}}</h2>\n          <p>Price: ${{cosme.price}}</p>\n          <p><span class=\"btn btn-primary\">Learn More</span></p>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1275,9 +1278,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CosmeticsComponent = /** @class */ (function () {
     function CosmeticsComponent(cosmeService) {
         this.cosmeService = cosmeService;
+        this.filteredName = '';
     }
     CosmeticsComponent.prototype.ngOnInit = function () {
         this.cosmetics = this.cosmeService.getCosmes();
+    };
+    CosmeticsComponent.prototype.onSearch = function (name) {
+        this.filteredName = name;
     };
     CosmeticsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -1318,11 +1325,11 @@ var CosmeticsService = /** @class */ (function () {
     function CosmeticsService(cartService) {
         this.cartService = cartService;
         this.cosmetics = [
-            { 'name': 'shuazi1', 'price': 200, 'imgUrl': '../../assets/img/cosmetics/images.jpeg', 'description': 'this is the first item' },
-            { 'name': 'shuazi2', 'price': 300, 'imgUrl': '../../assets/img/cosmetics/machiajul-pasagera.jpg', 'description': 'this is the first item' },
-            { 'name': 'shuazi3', 'price': 400, 'imgUrl': '../../assets/img/cosmetics/makeup-brush-1746322_960_720.jpg', 'description': 'this is the first item' },
-            { 'name': 'shuazi4', 'price': 500, 'imgUrl': '../../assets/img/cosmetics/makeup-brush-1746322_960_720.jpg', 'description': 'this is the first item' },
-            { 'name': 'shuazi5', 'price': 600, 'imgUrl': '../../assets/img/cosmetics/pedzle-przechowywanie.jpg', 'description': 'this is the first item' }
+            { 'name': 'shuazi', 'price': 200, 'imgUrl': '../../assets/img/cosmetics/images.jpeg', 'description': 'this is the first item' },
+            { 'name': 'fenpu', 'price': 300, 'imgUrl': '../../assets/img/cosmetics/machiajul-pasagera.jpg', 'description': 'this is the first item' },
+            { 'name': 'meibi', 'price': 400, 'imgUrl': '../../assets/img/cosmetics/makeup-brush-1746322_960_720.jpg', 'description': 'this is the first item' },
+            { 'name': 'kouhong', 'price': 500, 'imgUrl': '../../assets/img/cosmetics/makeup-brush-1746322_960_720.jpg', 'description': 'this is the first item' },
+            { 'name': 'kouhong2', 'price': 600, 'imgUrl': '../../assets/img/cosmetics/pedzle-przechowywanie.jpg', 'description': 'this is the first item' }
         ];
     }
     CosmeticsService.prototype.getCosmes = function () {
@@ -1346,6 +1353,47 @@ var CosmeticsService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_data_cart_service__["a" /* CartService */]])
     ], CosmeticsService);
     return CosmeticsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/cosmetics/filter.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return filterPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var filterPipe = /** @class */ (function () {
+    function filterPipe() {
+    }
+    filterPipe.prototype.transform = function (value, filterString) {
+        if (value.length === 0) {
+            return value;
+        }
+        var resultArray = [];
+        for (var _i = 0, value_1 = value; _i < value_1.length; _i++) {
+            var item = value_1[_i];
+            if (item.name.indexOf(filterString) != -1) {
+                resultArray.push(item);
+            }
+        }
+        return resultArray;
+    };
+    filterPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
+            name: 'filter',
+        })
+    ], filterPipe);
+    return filterPipe;
 }());
 
 
